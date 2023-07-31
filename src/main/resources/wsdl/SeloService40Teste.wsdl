@@ -1,0 +1,2019 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.tjsc.jus.br/selo" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="SeloService" targetNamespace="http://www.tjsc.jus.br/selo">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:tns="http://www.tjsc.jus.br/selo" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://www.tjsc.jus.br/selo">
+  <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+  <xs:element name="decodificaRecibo" type="tns:decodificaRecibo"/>
+  <xs:element name="decodificaReciboResponse" type="tns:decodificaReciboResponse"/>
+  <xs:element name="getBancos" type="tns:getBancos"/>
+  <xs:element name="getBancosResponse" type="tns:getBancosResponse"/>
+  <xs:element name="getCartorioLivros" type="tns:getCartorioLivros"/>
+  <xs:element name="getCartorioLivros20" type="tns:getCartorioLivros20"/>
+  <xs:element name="getCartorioLivros20Response" type="tns:getCartorioLivros20Response"/>
+  <xs:element name="getCartorioLivrosResponse" type="tns:getCartorioLivrosResponse"/>
+  <xs:element name="getCartorioServentuarios" type="tns:getCartorioServentuarios"/>
+  <xs:element name="getCartorioServentuarios20" type="tns:getCartorioServentuarios20"/>
+  <xs:element name="getCartorioServentuarios20Response" type="tns:getCartorioServentuarios20Response"/>
+  <xs:element name="getCartorioServentuariosResponse" type="tns:getCartorioServentuariosResponse"/>
+  <xs:element name="getCartorios" type="tns:getCartorios"/>
+  <xs:element name="getCartoriosResponse" type="tns:getCartoriosResponse"/>
+  <xs:element name="getComarcas" type="tns:getComarcas"/>
+  <xs:element name="getComarcasMunicipios" type="tns:getComarcasMunicipios"/>
+  <xs:element name="getComarcasMunicipiosResponse" type="tns:getComarcasMunicipiosResponse"/>
+  <xs:element name="getComarcasResponse" type="tns:getComarcasResponse"/>
+  <xs:element name="getEntesDeclaradosUtilidadePublicaEstadual" type="tns:getEntesDeclaradosUtilidadePublicaEstadual"/>
+  <xs:element name="getEntesDeclaradosUtilidadePublicaEstadualResponse" type="tns:getEntesDeclaradosUtilidadePublicaEstadualResponse"/>
+  <xs:element name="getEscolaridades" type="tns:getEscolaridades"/>
+  <xs:element name="getEscolaridadesResponse" type="tns:getEscolaridadesResponse"/>
+  <xs:element name="getEspeciesDeTitulo" type="tns:getEspeciesDeTitulo"/>
+  <xs:element name="getEspeciesDeTituloResponse" type="tns:getEspeciesDeTituloResponse"/>
+  <xs:element name="getEstados" type="tns:getEstados"/>
+  <xs:element name="getEstadosCivis" type="tns:getEstadosCivis"/>
+  <xs:element name="getEstadosCivisResponse" type="tns:getEstadosCivisResponse"/>
+  <xs:element name="getEstadosResponse" type="tns:getEstadosResponse"/>
+  <xs:element name="getEtnias" type="tns:getEtnias"/>
+  <xs:element name="getEtniasResponse" type="tns:getEtniasResponse"/>
+  <xs:element name="getFormasDePagamento" type="tns:getFormasDePagamento"/>
+  <xs:element name="getFormasDePagamentoResponse" type="tns:getFormasDePagamentoResponse"/>
+  <xs:element name="getJuizesDePaz" type="tns:getJuizesDePaz"/>
+  <xs:element name="getJuizesDePaz20" type="tns:getJuizesDePaz20"/>
+  <xs:element name="getJuizesDePaz20Response" type="tns:getJuizesDePaz20Response"/>
+  <xs:element name="getJuizesDePazResponse" type="tns:getJuizesDePazResponse"/>
+  <xs:element name="getMoedas" type="tns:getMoedas"/>
+  <xs:element name="getMoedasResponse" type="tns:getMoedasResponse"/>
+  <xs:element name="getMotivosDeCancelamentoDoProtesto" type="tns:getMotivosDeCancelamentoDoProtesto"/>
+  <xs:element name="getMotivosDeCancelamentoDoProtestoResponse" type="tns:getMotivosDeCancelamentoDoProtestoResponse"/>
+  <xs:element name="getMotivosDeProtesto" type="tns:getMotivosDeProtesto"/>
+  <xs:element name="getMotivosDeProtestoResponse" type="tns:getMotivosDeProtestoResponse"/>
+  <xs:element name="getMunicipios" type="tns:getMunicipios"/>
+  <xs:element name="getMunicipiosResponse" type="tns:getMunicipiosResponse"/>
+  <xs:element name="getPaises" type="tns:getPaises"/>
+  <xs:element name="getPaisesResponse" type="tns:getPaisesResponse"/>
+  <xs:element name="getProfissoes" type="tns:getProfissoes"/>
+  <xs:element name="getProfissoesResponse" type="tns:getProfissoesResponse"/>
+  <xs:element name="getSelos" type="tns:getSelos"/>
+  <xs:element name="getSelosCompactados" type="tns:getSelosCompactados"/>
+  <xs:element name="getSelosCompactadosResponse" type="tns:getSelosCompactadosResponse"/>
+  <xs:element name="getSelosPedido" type="tns:getSelosPedido"/>
+  <xs:element name="getSelosPedidoCompactados" type="tns:getSelosPedidoCompactados"/>
+  <xs:element name="getSelosPedidoCompactadosResponse" type="tns:getSelosPedidoCompactadosResponse"/>
+  <xs:element name="getSelosPedidoResponse" type="tns:getSelosPedidoResponse"/>
+  <xs:element name="getSelosResponse" type="tns:getSelosResponse"/>
+  <xs:element name="getSituacoesDeTitulo" type="tns:getSituacoesDeTitulo"/>
+  <xs:element name="getSituacoesDeTituloResponse" type="tns:getSituacoesDeTituloResponse"/>
+  <xs:element name="getTiposDeAto" type="tns:getTiposDeAto"/>
+  <xs:element name="getTiposDeAto20" type="tns:getTiposDeAto20"/>
+  <xs:element name="getTiposDeAto20Response" type="tns:getTiposDeAto20Response"/>
+  <xs:element name="getTiposDeAtoResponse" type="tns:getTiposDeAtoResponse"/>
+  <xs:element name="getTiposDeCobranca" type="tns:getTiposDeCobranca"/>
+  <xs:element name="getTiposDeCobranca20" type="tns:getTiposDeCobranca20"/>
+  <xs:element name="getTiposDeCobranca20Response" type="tns:getTiposDeCobranca20Response"/>
+  <xs:element name="getTiposDeCobrancaResponse" type="tns:getTiposDeCobrancaResponse"/>
+  <xs:element name="getTiposDeDocumento" type="tns:getTiposDeDocumento"/>
+  <xs:element name="getTiposDeDocumentoResponse" type="tns:getTiposDeDocumentoResponse"/>
+  <xs:element name="getTiposDeEmail" type="tns:getTiposDeEmail"/>
+  <xs:element name="getTiposDeEmailResponse" type="tns:getTiposDeEmailResponse"/>
+  <xs:element name="getTiposDeEndereco" type="tns:getTiposDeEndereco"/>
+  <xs:element name="getTiposDeEnderecoResponse" type="tns:getTiposDeEnderecoResponse"/>
+  <xs:element name="getTiposDeEndosso" type="tns:getTiposDeEndosso"/>
+  <xs:element name="getTiposDeEndossoResponse" type="tns:getTiposDeEndossoResponse"/>
+  <xs:element name="getTiposDeProcuracao" type="tns:getTiposDeProcuracao"/>
+  <xs:element name="getTiposDeProcuracaoResponse" type="tns:getTiposDeProcuracaoResponse"/>
+  <xs:element name="getTiposDeRegistroDeAverbacao" type="tns:getTiposDeRegistroDeAverbacao"/>
+  <xs:element name="getTiposDeRegistroDeAverbacaoResponse" type="tns:getTiposDeRegistroDeAverbacaoResponse"/>
+  <xs:element name="getTiposDeSelo" type="tns:getTiposDeSelo"/>
+  <xs:element name="getTiposDeSeloResponse" type="tns:getTiposDeSeloResponse"/>
+  <xs:element name="getTiposDeServentuario" type="tns:getTiposDeServentuario"/>
+  <xs:element name="getTiposDeServentuarioResponse" type="tns:getTiposDeServentuarioResponse"/>
+  <xs:element name="getTiposDeSubestabelecimento" type="tns:getTiposDeSubestabelecimento"/>
+  <xs:element name="getTiposDeSubestabelecimentoResponse" type="tns:getTiposDeSubestabelecimentoResponse"/>
+  <xs:element name="getTiposDeTelefone" type="tns:getTiposDeTelefone"/>
+  <xs:element name="getTiposDeTelefoneResponse" type="tns:getTiposDeTelefoneResponse"/>
+  <xs:element name="getTiposDeTestamento" type="tns:getTiposDeTestamento"/>
+  <xs:element name="getTiposDeTestamentoResponse" type="tns:getTiposDeTestamentoResponse"/>
+  <xs:element name="putAtos" type="tns:putAtos"/>
+  <xs:element name="putAtosResponse" type="tns:putAtosResponse"/>
+  <xs:element name="redisponibilizaUltimaTransmissaoSelos" type="tns:redisponibilizaUltimaTransmissaoSelos"/>
+  <xs:element name="redisponibilizaUltimaTransmissaoSelosResponse" type="tns:redisponibilizaUltimaTransmissaoSelosResponse"/>
+  <xs:element name="verificaTransmissao" type="tns:verificaTransmissao"/>
+  <xs:element name="verificaTransmissaoResponse" type="tns:verificaTransmissaoResponse"/>
+  <xs:complexType name="getSituacoesDeTitulo">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getSituacoesDeTituloResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="situacoesDeTitulo" type="tns:situacaoTitulo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="situacaoTitulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdsituacaotitulo" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmsituacaotitulo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeCobranca">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeCobrancaResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeCobranca" type="tns:tipoCobranca"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoCobranca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipocobranca" type="xs:long"/>
+      <xs:element minOccurs="0" name="dispositivolegal" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtipocobranca" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeCobranca20">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeCobranca20Response">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeCobranca20" type="tns:tipoCobranca20"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoCobranca20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipocobranca" type="xs:long"/>
+      <xs:element minOccurs="0" name="dispositivolegal" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtipocobranca" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getJuizesDePaz">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getJuizesDePazResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="juizesDePaz" type="tns:juizPaz"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="juizPaz">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcomarca" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdjuizdepaz" type="xs:long"/>
+      <xs:element minOccurs="0" name="cdtpjuizdepaz" type="xs:int"/>
+      <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+      <xs:element minOccurs="0" name="detpjuizdepaz" type="xs:string"/>
+      <xs:element minOccurs="0" name="dtfimexercicio" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dtiniexercicio" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosPedido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+      <xs:element minOccurs="0" name="nupedido" type="xs:long"/>
+      <xs:element minOccurs="0" name="isento" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosPedidoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="selosPedido" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeSubestabelecimento">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeSubestabelecimentoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeSubestabelecimento" type="tns:tipoSubestabelecimento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoSubestabelecimento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtiposubestabelecimento" type="xs:long"/>
+      <xs:element minOccurs="0" name="nmtiposubestabelecimento" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getBancos">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getBancosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="bancos" type="tns:banco"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="banco">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdbanco" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmbanco" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioLivros20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioLivros20Response">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cartorioLivros20" type="tns:cartorioLivro20"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cartorioLivro20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcartoriolivro" type="xs:long"/>
+      <xs:element minOccurs="0" name="cdtipoformalivro" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdtipolivro" type="xs:int"/>
+      <xs:element minOccurs="0" name="dtabertura" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dtencerramento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="nmtipoformalivro" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtipolivro" type="xs:string"/>
+      <xs:element minOccurs="0" name="nucartorio" type="xs:int"/>
+      <xs:element minOccurs="0" name="nucartorioresponsavel" type="xs:int"/>
+      <xs:element minOccurs="0" name="seqlivro" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEtnias">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getEtniasResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="etnias" type="tns:etnia"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="etnia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdetnia" type="xs:short"/>
+      <xs:element minOccurs="0" name="deetnia" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeRegistroDeAverbacao">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeRegistroDeAverbacaoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeRegistroDeAverbacao" type="tns:tipoRegistroAverbacao"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoRegistroAverbacao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtiporegaverbacao" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtiporegaverbacao" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeTelefone">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeTelefoneResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeTelefone" type="tns:tipoTelefone"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoTelefone">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipotelefone" type="xs:short"/>
+      <xs:element minOccurs="0" name="detipotelefone" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeTestamento">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeTestamentoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeTestamento" type="tns:tipoTestamento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoTestamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipotestamento" type="xs:long"/>
+      <xs:element minOccurs="0" name="nmtipotestamento" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getComarcas">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getComarcasResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="comarcas" type="tns:comarca"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comarca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcomarca" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmcomarca" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeDocumento">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeDocumentoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeDocumento" type="tns:tipoDocumento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoDocumento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtpdocumento" type="xs:short"/>
+      <xs:element minOccurs="0" name="detpdocumento" type="xs:string"/>
+      <xs:element minOccurs="0" name="detpdocumentoabrev" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeAto">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeAtoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeAto" type="tns:tipoAto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoAto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipoato" type="xs:long"/>
+      <xs:element name="flativo" type="xs:short"/>
+      <xs:element minOccurs="0" name="modeloscompativeis" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtipoato" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeSelo">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeSeloResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeSelo" type="tns:tipoSelo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoSelo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtpselo" type="xs:short"/>
+      <xs:element minOccurs="0" name="detpselo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMoedas">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getMoedasResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="moedas" type="tns:moeda"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moeda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdmoeda" type="xs:short"/>
+      <xs:element minOccurs="0" name="desimbolo" type="xs:string"/>
+      <xs:element minOccurs="0" name="dtvigencia" type="xs:dateTime"/>
+      <xs:element name="flmoedabr" type="xs:short"/>
+      <xs:element name="flvigente" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmmoeda" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmmoedaplural" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMotivosDeProtesto">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getMotivosDeProtestoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="motivosDeProtesto" type="tns:motivoProtesto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="motivoProtesto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdmotivoprotesto" type="xs:long"/>
+      <xs:element minOccurs="0" name="nmmotivoprotesto" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEstadosCivis">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getEstadosCivisResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="estadosCivis" type="tns:estadoCivil"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estadoCivil">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdestadocivil" type="xs:short"/>
+      <xs:element minOccurs="0" name="deestadocivilfem" type="xs:string"/>
+      <xs:element minOccurs="0" name="deestadocivilmasc" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getPaises">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getPaisesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="paises" type="tns:pais"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdpais" type="xs:short"/>
+      <xs:element minOccurs="0" name="denacionalidadefeminina" type="xs:string"/>
+      <xs:element minOccurs="0" name="denacionalidademasc" type="xs:string"/>
+      <xs:element minOccurs="0" name="depais" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEscolaridades">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getEscolaridadesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="escolaridades" type="tns:escolaridade"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="escolaridade">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdescolaridade" type="xs:short"/>
+      <xs:element minOccurs="0" name="deescolaridade" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificaTransmissao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+      <xs:element minOccurs="0" name="messageIDtransmissao" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificaTransmissaoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reciboTSRarmazenado" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEspeciesDeTitulo">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getEspeciesDeTituloResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="especiesDeTitulo" type="tns:especieTitulo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="especieTitulo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdespecietitulo" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmespecietitulo" type="xs:string"/>
+      <xs:element minOccurs="0" name="sgespecietitulo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosPedidoCompactados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+      <xs:element minOccurs="0" name="nupedido" type="xs:long"/>
+      <xs:element minOccurs="0" name="isento" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosPedidoCompactadosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="selosPedidoCompactados" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioServentuarios20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioServentuarios20Response">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cartorioServentuarios20" type="tns:cartorioServentuario20"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cartorioServentuario20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdserventuario" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdtiposerventuario" type="xs:int"/>
+      <xs:element minOccurs="0" name="nmserventuario" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtiposerventuario" type="xs:string"/>
+      <xs:element minOccurs="0" name="nucartorio" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMotivosDeCancelamentoDoProtesto">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getMotivosDeCancelamentoDoProtestoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="motivosDeCancelamentoDoProtesto" type="tns:motivoCancelProtesto"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="motivoCancelProtesto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdmotivocancelprotesto" type="xs:long"/>
+      <xs:element minOccurs="0" name="nmmotivocancelprotesto" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="decodificaRecibo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+      <xs:element minOccurs="0" name="recibo" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="decodificaReciboResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reciboDecodificado" type="tns:reciboProtocolo"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reciboProtocolo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="commonName" type="xs:string"/>
+      <xs:element minOccurs="0" name="data" type="xs:string"/>
+      <xs:element minOccurs="0" name="email" type="xs:string"/>
+      <xs:element minOccurs="0" name="estado" type="xs:string"/>
+      <xs:element minOccurs="0" name="hashCertificado" type="xs:string"/>
+      <xs:element minOccurs="0" name="hashDocumento" type="xs:string"/>
+      <xs:element minOccurs="0" name="localidade" type="xs:string"/>
+      <xs:element minOccurs="0" name="OIDpolitica" type="xs:string"/>
+      <xs:element minOccurs="0" name="organizacao" type="xs:string"/>
+      <xs:element minOccurs="0" name="pais" type="xs:string"/>
+      <xs:element minOccurs="0" name="serial" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+      <xs:element minOccurs="0" name="unidadeOrganizacional" type="xs:string"/>
+      <xs:element minOccurs="0" name="versao" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getJuizesDePaz20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getJuizesDePaz20Response">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="juizesDePaz20" type="tns:juizPaz20"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="juizPaz20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcomarca" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdjuizdepaz" type="xs:long"/>
+      <xs:element minOccurs="0" name="cdtpjuizdepaz" type="xs:int"/>
+      <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+      <xs:element minOccurs="0" name="detpjuizdepaz" type="xs:string"/>
+      <xs:element minOccurs="0" name="dtfimexercicio" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dtiniexercicio" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="nome" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeServentuario">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeServentuarioResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeServentuario" type="tns:tipoServentuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoServentuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtiposerventuario" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmtiposerventuario" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getComarcasMunicipios">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getComarcasMunicipiosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="comarcasmunicipios" type="tns:comarcaMunicipio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comarcaMunicipio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcomarca" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdmunicipio" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioServentuarios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioServentuariosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cartorioServentuarios" type="tns:cartorioServentuario"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cartorioServentuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdserventuario" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdtiposerventuario" type="xs:int"/>
+      <xs:element minOccurs="0" name="nmserventuario" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtiposerventuario" type="xs:string"/>
+      <xs:element minOccurs="0" name="nucartorio" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioLivros">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorioLivrosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cartorioLivros" type="tns:cartorioLivro"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cartorioLivro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcartoriolivro" type="xs:long"/>
+      <xs:element minOccurs="0" name="cdtipoformalivro" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdtipolivro" type="xs:int"/>
+      <xs:element minOccurs="0" name="dtabertura" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="dtencerramento" type="xs:dateTime"/>
+      <xs:element minOccurs="0" name="nmtipoformalivro" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtipolivro" type="xs:string"/>
+      <xs:element minOccurs="0" name="nucartorio" type="xs:int"/>
+      <xs:element minOccurs="0" name="nucartorioresponsavel" type="xs:int"/>
+      <xs:element minOccurs="0" name="seqlivro" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getProfissoes">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getProfissoesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="profissoes" type="tns:profissao"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="profissao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdprofissao" type="xs:short"/>
+      <xs:element minOccurs="0" name="deprofissao" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getCartorios">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getCartoriosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="cartorios" type="tns:cartorio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cartorio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdmunicipio" type="xs:string"/>
+      <xs:element minOccurs="0" name="deemail" type="xs:string"/>
+      <xs:element minOccurs="0" name="dsbairro" type="xs:string"/>
+      <xs:element minOccurs="0" name="dsendereco" type="xs:string"/>
+      <xs:element minOccurs="0" name="flsituacao" type="xs:int"/>
+      <xs:element minOccurs="0" name="nmcartorio" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtitular" type="xs:string"/>
+      <xs:element minOccurs="0" name="nucartorio" type="xs:int"/>
+      <xs:element minOccurs="0" name="nucnpjcpf" type="xs:long"/>
+      <xs:element minOccurs="0" name="nufone" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getMunicipios">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getMunicipiosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="municipios" type="tns:municipio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="municipio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdmunicipio" type="xs:int"/>
+      <xs:element minOccurs="0" name="deestado" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmmunicipio" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="redisponibilizaUltimaTransmissaoSelos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="redisponibilizaUltimaTransmissaoSelosResponse">
+    <xs:sequence>
+      <xs:element name="numeroSelosLiberados" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosCompactados">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosCompactadosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="selosCompactados" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeEndereco">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeEnderecoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeEndereco" type="tns:tipoEndereco"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoEndereco">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipoendereco" type="xs:short"/>
+      <xs:element minOccurs="0" name="detipoendereco" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getSelosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="selosAssinados" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeAto20">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeAto20Response">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeAto20" type="tns:tipoAto20"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoAto20">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipoato" type="xs:long"/>
+      <xs:element name="flativo" type="xs:short"/>
+      <xs:element minOccurs="0" name="modeloscompativeis" type="xs:string"/>
+      <xs:element minOccurs="0" name="nmtipoato" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeProcuracao">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeProcuracaoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeProcuracao" type="tns:tipoProcuracao"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoProcuracao">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipoprocuracao" type="xs:long"/>
+      <xs:element minOccurs="0" name="nmtipoprocuracao" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeEndosso">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeEndossoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeEndosso" type="tns:tipoEndosso"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoEndosso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipoendosso" type="xs:long"/>
+      <xs:element minOccurs="0" name="nmtipoendosso" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEntesDeclaradosUtilidadePublicaEstadual">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getEntesDeclaradosUtilidadePublicaEstadualResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="entesDeclaradosUtilidadePublicaEstadual" type="tns:enteDeclaradoUtilidadePublicaEstadual"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enteDeclaradoUtilidadePublicaEstadual">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdcomarca" type="xs:int"/>
+      <xs:element minOccurs="0" name="cdentepub" type="xs:long"/>
+      <xs:element minOccurs="0" name="dtLei" type="xs:string"/>
+      <xs:element minOccurs="0" name="dtLeiExtenso" type="xs:string"/>
+      <xs:element minOccurs="0" name="lei" type="xs:string"/>
+      <xs:element minOccurs="0" name="nomeComarca" type="xs:string"/>
+      <xs:element minOccurs="0" name="nomeComarcaEntidade" type="xs:string"/>
+      <xs:element minOccurs="0" name="nomeEntidade" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="putAtos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="user" type="xs:string"/>
+      <xs:element minOccurs="0" name="pass" type="xs:string"/>
+      <xs:element minOccurs="0" name="arquivo" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="putAtosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="reciboTSR" type="xs:base64Binary"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getEstados">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getEstadosResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="estados" type="tns:estado"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdestado" type="xs:string"/>
+      <xs:element minOccurs="0" name="deestado" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getFormasDePagamento">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getFormasDePagamentoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="formasDePagamento" type="tns:formaPagamento"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="formaPagamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdformapagamento" type="xs:short"/>
+      <xs:element minOccurs="0" name="nmformapagamento" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeEmail">
+    <xs:sequence/>
+  </xs:complexType>
+  <xs:complexType name="getTiposDeEmailResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="tiposDeEmail" type="tns:tipoEmail"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cdtipoemail" type="xs:short"/>
+      <xs:element minOccurs="0" name="detipoemail" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Exception" type="tns:Exception"/>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getCartorioServentuariosResponse">
+    <wsdl:part element="tns:getCartorioServentuariosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosResponse">
+    <wsdl:part element="tns:getSelosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJuizesDePaz">
+    <wsdl:part element="tns:getJuizesDePaz" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeEndossoResponse">
+    <wsdl:part element="tns:getTiposDeEndossoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeSubestabelecimento">
+    <wsdl:part element="tns:getTiposDeSubestabelecimento" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeRegistroDeAverbacao">
+    <wsdl:part element="tns:getTiposDeRegistroDeAverbacao" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeTestamento">
+    <wsdl:part element="tns:getTiposDeTestamento" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeEnderecoResponse">
+    <wsdl:part element="tns:getTiposDeEnderecoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeDocumento">
+    <wsdl:part element="tns:getTiposDeDocumento" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeServentuarioResponse">
+    <wsdl:part element="tns:getTiposDeServentuarioResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeSelo">
+    <wsdl:part element="tns:getTiposDeSelo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeAto20Response">
+    <wsdl:part element="tns:getTiposDeAto20Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMotivosDeProtesto">
+    <wsdl:part element="tns:getMotivosDeProtesto" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMunicipiosResponse">
+    <wsdl:part element="tns:getMunicipiosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEtniasResponse">
+    <wsdl:part element="tns:getEtniasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComarcasMunicipiosResponse">
+    <wsdl:part element="tns:getComarcasMunicipiosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeAtoResponse">
+    <wsdl:part element="tns:getTiposDeAtoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPaises">
+    <wsdl:part element="tns:getPaises" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaTransmissao">
+    <wsdl:part element="tns:verificaTransmissao" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeCobranca20Response">
+    <wsdl:part element="tns:getTiposDeCobranca20Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPaisesResponse">
+    <wsdl:part element="tns:getPaisesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEspeciesDeTitulo">
+    <wsdl:part element="tns:getEspeciesDeTitulo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosPedidoCompactados">
+    <wsdl:part element="tns:getSelosPedidoCompactados" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMotivosDeCancelamentoDoProtesto">
+    <wsdl:part element="tns:getMotivosDeCancelamentoDoProtesto" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEstadosResponse">
+    <wsdl:part element="tns:getEstadosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decodificaRecibo">
+    <wsdl:part element="tns:decodificaRecibo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="decodificaReciboResponse">
+    <wsdl:part element="tns:decodificaReciboResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFormasDePagamentoResponse">
+    <wsdl:part element="tns:getFormasDePagamentoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComarcasMunicipios">
+    <wsdl:part element="tns:getComarcasMunicipios" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioLivros">
+    <wsdl:part element="tns:getCartorioLivros" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProfissoes">
+    <wsdl:part element="tns:getProfissoes" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificaTransmissaoResponse">
+    <wsdl:part element="tns:verificaTransmissaoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="redisponibilizaUltimaTransmissaoSelos">
+    <wsdl:part element="tns:redisponibilizaUltimaTransmissaoSelos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeSubestabelecimentoResponse">
+    <wsdl:part element="tns:getTiposDeSubestabelecimentoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getProfissoesResponse">
+    <wsdl:part element="tns:getProfissoesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeCobrancaResponse">
+    <wsdl:part element="tns:getTiposDeCobrancaResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJuizesDePaz20Response">
+    <wsdl:part element="tns:getJuizesDePaz20Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeEndereco">
+    <wsdl:part element="tns:getTiposDeEndereco" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioLivrosResponse">
+    <wsdl:part element="tns:getCartorioLivrosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelos">
+    <wsdl:part element="tns:getSelos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosPedidoCompactadosResponse">
+    <wsdl:part element="tns:getSelosPedidoCompactadosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeProcuracaoResponse">
+    <wsdl:part element="tns:getTiposDeProcuracaoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosPedidoResponse">
+    <wsdl:part element="tns:getSelosPedidoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeTelefoneResponse">
+    <wsdl:part element="tns:getTiposDeTelefoneResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeTestamentoResponse">
+    <wsdl:part element="tns:getTiposDeTestamentoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMotivosDeProtestoResponse">
+    <wsdl:part element="tns:getMotivosDeProtestoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSituacoesDeTituloResponse">
+    <wsdl:part element="tns:getSituacoesDeTituloResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSituacoesDeTitulo">
+    <wsdl:part element="tns:getSituacoesDeTitulo" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeCobranca">
+    <wsdl:part element="tns:getTiposDeCobranca" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeCobranca20">
+    <wsdl:part element="tns:getTiposDeCobranca20" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosPedido">
+    <wsdl:part element="tns:getSelosPedido" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBancos">
+    <wsdl:part element="tns:getBancos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComarcasResponse">
+    <wsdl:part element="tns:getComarcasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioLivros20">
+    <wsdl:part element="tns:getCartorioLivros20" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEtnias">
+    <wsdl:part element="tns:getEtnias" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeTelefone">
+    <wsdl:part element="tns:getTiposDeTelefone" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComarcas">
+    <wsdl:part element="tns:getComarcas" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeAto">
+    <wsdl:part element="tns:getTiposDeAto" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMoedas">
+    <wsdl:part element="tns:getMoedas" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeEmailResponse">
+    <wsdl:part element="tns:getTiposDeEmailResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEscolaridadesResponse">
+    <wsdl:part element="tns:getEscolaridadesResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEstadosCivis">
+    <wsdl:part element="tns:getEstadosCivis" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioLivros20Response">
+    <wsdl:part element="tns:getCartorioLivros20Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEscolaridades">
+    <wsdl:part element="tns:getEscolaridades" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeSeloResponse">
+    <wsdl:part element="tns:getTiposDeSeloResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="redisponibilizaUltimaTransmissaoSelosResponse">
+    <wsdl:part element="tns:redisponibilizaUltimaTransmissaoSelosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioServentuarios20">
+    <wsdl:part element="tns:getCartorioServentuarios20" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEspeciesDeTituloResponse">
+    <wsdl:part element="tns:getEspeciesDeTituloResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="putAtosResponse">
+    <wsdl:part element="tns:putAtosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getBancosResponse">
+    <wsdl:part element="tns:getBancosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMotivosDeCancelamentoDoProtestoResponse">
+    <wsdl:part element="tns:getMotivosDeCancelamentoDoProtestoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJuizesDePaz20">
+    <wsdl:part element="tns:getJuizesDePaz20" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeServentuario">
+    <wsdl:part element="tns:getTiposDeServentuario" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosCompactadosResponse">
+    <wsdl:part element="tns:getSelosCompactadosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioServentuarios">
+    <wsdl:part element="tns:getCartorioServentuarios" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorioServentuarios20Response">
+    <wsdl:part element="tns:getCartorioServentuarios20Response" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartorios">
+    <wsdl:part element="tns:getCartorios" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMunicipios">
+    <wsdl:part element="tns:getMunicipios" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntesDeclaradosUtilidadePublicaEstadualResponse">
+    <wsdl:part element="tns:getEntesDeclaradosUtilidadePublicaEstadualResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSelosCompactados">
+    <wsdl:part element="tns:getSelosCompactados" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCartoriosResponse">
+    <wsdl:part element="tns:getCartoriosResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMoedasResponse">
+    <wsdl:part element="tns:getMoedasResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeAto20">
+    <wsdl:part element="tns:getTiposDeAto20" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="Exception">
+    <wsdl:part element="tns:Exception" name="Exception">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeProcuracao">
+    <wsdl:part element="tns:getTiposDeProcuracao" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJuizesDePazResponse">
+    <wsdl:part element="tns:getJuizesDePazResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeEndosso">
+    <wsdl:part element="tns:getTiposDeEndosso" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeRegistroDeAverbacaoResponse">
+    <wsdl:part element="tns:getTiposDeRegistroDeAverbacaoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEstadosCivisResponse">
+    <wsdl:part element="tns:getEstadosCivisResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeDocumentoResponse">
+    <wsdl:part element="tns:getTiposDeDocumentoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntesDeclaradosUtilidadePublicaEstadual">
+    <wsdl:part element="tns:getEntesDeclaradosUtilidadePublicaEstadual" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="putAtos">
+    <wsdl:part element="tns:putAtos" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEstados">
+    <wsdl:part element="tns:getEstados" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getFormasDePagamento">
+    <wsdl:part element="tns:getFormasDePagamento" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeEmail">
+    <wsdl:part element="tns:getTiposDeEmail" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SeloService">
+    <wsdl:operation name="getSituacoesDeTitulo">
+      <wsdl:input message="tns:getSituacoesDeTitulo" name="getSituacoesDeTitulo">
+    </wsdl:input>
+      <wsdl:output message="tns:getSituacoesDeTituloResponse" name="getSituacoesDeTituloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeCobranca">
+      <wsdl:input message="tns:getTiposDeCobranca" name="getTiposDeCobranca">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeCobrancaResponse" name="getTiposDeCobrancaResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeCobranca20">
+      <wsdl:input message="tns:getTiposDeCobranca20" name="getTiposDeCobranca20">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeCobranca20Response" name="getTiposDeCobranca20Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJuizesDePaz">
+      <wsdl:input message="tns:getJuizesDePaz" name="getJuizesDePaz">
+    </wsdl:input>
+      <wsdl:output message="tns:getJuizesDePazResponse" name="getJuizesDePazResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSelosPedido">
+      <wsdl:input message="tns:getSelosPedido" name="getSelosPedido">
+    </wsdl:input>
+      <wsdl:output message="tns:getSelosPedidoResponse" name="getSelosPedidoResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeSubestabelecimento">
+      <wsdl:input message="tns:getTiposDeSubestabelecimento" name="getTiposDeSubestabelecimento">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeSubestabelecimentoResponse" name="getTiposDeSubestabelecimentoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBancos">
+      <wsdl:input message="tns:getBancos" name="getBancos">
+    </wsdl:input>
+      <wsdl:output message="tns:getBancosResponse" name="getBancosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioLivros20">
+      <wsdl:input message="tns:getCartorioLivros20" name="getCartorioLivros20">
+    </wsdl:input>
+      <wsdl:output message="tns:getCartorioLivros20Response" name="getCartorioLivros20Response">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEtnias">
+      <wsdl:input message="tns:getEtnias" name="getEtnias">
+    </wsdl:input>
+      <wsdl:output message="tns:getEtniasResponse" name="getEtniasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeRegistroDeAverbacao">
+      <wsdl:input message="tns:getTiposDeRegistroDeAverbacao" name="getTiposDeRegistroDeAverbacao">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeRegistroDeAverbacaoResponse" name="getTiposDeRegistroDeAverbacaoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeTelefone">
+      <wsdl:input message="tns:getTiposDeTelefone" name="getTiposDeTelefone">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeTelefoneResponse" name="getTiposDeTelefoneResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeTestamento">
+      <wsdl:input message="tns:getTiposDeTestamento" name="getTiposDeTestamento">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeTestamentoResponse" name="getTiposDeTestamentoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComarcas">
+      <wsdl:input message="tns:getComarcas" name="getComarcas">
+    </wsdl:input>
+      <wsdl:output message="tns:getComarcasResponse" name="getComarcasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeDocumento">
+      <wsdl:input message="tns:getTiposDeDocumento" name="getTiposDeDocumento">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeDocumentoResponse" name="getTiposDeDocumentoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeAto">
+      <wsdl:input message="tns:getTiposDeAto" name="getTiposDeAto">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeAtoResponse" name="getTiposDeAtoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeSelo">
+      <wsdl:input message="tns:getTiposDeSelo" name="getTiposDeSelo">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeSeloResponse" name="getTiposDeSeloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMoedas">
+      <wsdl:input message="tns:getMoedas" name="getMoedas">
+    </wsdl:input>
+      <wsdl:output message="tns:getMoedasResponse" name="getMoedasResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotivosDeProtesto">
+      <wsdl:input message="tns:getMotivosDeProtesto" name="getMotivosDeProtesto">
+    </wsdl:input>
+      <wsdl:output message="tns:getMotivosDeProtestoResponse" name="getMotivosDeProtestoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadosCivis">
+      <wsdl:input message="tns:getEstadosCivis" name="getEstadosCivis">
+    </wsdl:input>
+      <wsdl:output message="tns:getEstadosCivisResponse" name="getEstadosCivisResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPaises">
+      <wsdl:input message="tns:getPaises" name="getPaises">
+    </wsdl:input>
+      <wsdl:output message="tns:getPaisesResponse" name="getPaisesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEscolaridades">
+      <wsdl:input message="tns:getEscolaridades" name="getEscolaridades">
+    </wsdl:input>
+      <wsdl:output message="tns:getEscolaridadesResponse" name="getEscolaridadesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTransmissao">
+      <wsdl:input message="tns:verificaTransmissao" name="verificaTransmissao">
+    </wsdl:input>
+      <wsdl:output message="tns:verificaTransmissaoResponse" name="verificaTransmissaoResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEspeciesDeTitulo">
+      <wsdl:input message="tns:getEspeciesDeTitulo" name="getEspeciesDeTitulo">
+    </wsdl:input>
+      <wsdl:output message="tns:getEspeciesDeTituloResponse" name="getEspeciesDeTituloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSelosPedidoCompactados">
+      <wsdl:input message="tns:getSelosPedidoCompactados" name="getSelosPedidoCompactados">
+    </wsdl:input>
+      <wsdl:output message="tns:getSelosPedidoCompactadosResponse" name="getSelosPedidoCompactadosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioServentuarios20">
+      <wsdl:input message="tns:getCartorioServentuarios20" name="getCartorioServentuarios20">
+    </wsdl:input>
+      <wsdl:output message="tns:getCartorioServentuarios20Response" name="getCartorioServentuarios20Response">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMotivosDeCancelamentoDoProtesto">
+      <wsdl:input message="tns:getMotivosDeCancelamentoDoProtesto" name="getMotivosDeCancelamentoDoProtesto">
+    </wsdl:input>
+      <wsdl:output message="tns:getMotivosDeCancelamentoDoProtestoResponse" name="getMotivosDeCancelamentoDoProtestoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decodificaRecibo">
+      <wsdl:input message="tns:decodificaRecibo" name="decodificaRecibo">
+    </wsdl:input>
+      <wsdl:output message="tns:decodificaReciboResponse" name="decodificaReciboResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getJuizesDePaz20">
+      <wsdl:input message="tns:getJuizesDePaz20" name="getJuizesDePaz20">
+    </wsdl:input>
+      <wsdl:output message="tns:getJuizesDePaz20Response" name="getJuizesDePaz20Response">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeServentuario">
+      <wsdl:input message="tns:getTiposDeServentuario" name="getTiposDeServentuario">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeServentuarioResponse" name="getTiposDeServentuarioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComarcasMunicipios">
+      <wsdl:input message="tns:getComarcasMunicipios" name="getComarcasMunicipios">
+    </wsdl:input>
+      <wsdl:output message="tns:getComarcasMunicipiosResponse" name="getComarcasMunicipiosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioServentuarios">
+      <wsdl:input message="tns:getCartorioServentuarios" name="getCartorioServentuarios">
+    </wsdl:input>
+      <wsdl:output message="tns:getCartorioServentuariosResponse" name="getCartorioServentuariosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioLivros">
+      <wsdl:input message="tns:getCartorioLivros" name="getCartorioLivros">
+    </wsdl:input>
+      <wsdl:output message="tns:getCartorioLivrosResponse" name="getCartorioLivrosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProfissoes">
+      <wsdl:input message="tns:getProfissoes" name="getProfissoes">
+    </wsdl:input>
+      <wsdl:output message="tns:getProfissoesResponse" name="getProfissoesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorios">
+      <wsdl:input message="tns:getCartorios" name="getCartorios">
+    </wsdl:input>
+      <wsdl:output message="tns:getCartoriosResponse" name="getCartoriosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMunicipios">
+      <wsdl:input message="tns:getMunicipios" name="getMunicipios">
+    </wsdl:input>
+      <wsdl:output message="tns:getMunicipiosResponse" name="getMunicipiosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="redisponibilizaUltimaTransmissaoSelos">
+      <wsdl:input message="tns:redisponibilizaUltimaTransmissaoSelos" name="redisponibilizaUltimaTransmissaoSelos">
+    </wsdl:input>
+      <wsdl:output message="tns:redisponibilizaUltimaTransmissaoSelosResponse" name="redisponibilizaUltimaTransmissaoSelosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSelosCompactados">
+      <wsdl:input message="tns:getSelosCompactados" name="getSelosCompactados">
+    </wsdl:input>
+      <wsdl:output message="tns:getSelosCompactadosResponse" name="getSelosCompactadosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeEndereco">
+      <wsdl:input message="tns:getTiposDeEndereco" name="getTiposDeEndereco">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeEnderecoResponse" name="getTiposDeEnderecoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSelos">
+      <wsdl:input message="tns:getSelos" name="getSelos">
+    </wsdl:input>
+      <wsdl:output message="tns:getSelosResponse" name="getSelosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeAto20">
+      <wsdl:input message="tns:getTiposDeAto20" name="getTiposDeAto20">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeAto20Response" name="getTiposDeAto20Response">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeProcuracao">
+      <wsdl:input message="tns:getTiposDeProcuracao" name="getTiposDeProcuracao">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeProcuracaoResponse" name="getTiposDeProcuracaoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeEndosso">
+      <wsdl:input message="tns:getTiposDeEndosso" name="getTiposDeEndosso">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeEndossoResponse" name="getTiposDeEndossoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntesDeclaradosUtilidadePublicaEstadual">
+      <wsdl:input message="tns:getEntesDeclaradosUtilidadePublicaEstadual" name="getEntesDeclaradosUtilidadePublicaEstadual">
+    </wsdl:input>
+      <wsdl:output message="tns:getEntesDeclaradosUtilidadePublicaEstadualResponse" name="getEntesDeclaradosUtilidadePublicaEstadualResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="putAtos">
+      <wsdl:input message="tns:putAtos" name="putAtos">
+    </wsdl:input>
+      <wsdl:output message="tns:putAtosResponse" name="putAtosResponse">
+    </wsdl:output>
+      <wsdl:fault message="tns:Exception" name="Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEstados">
+      <wsdl:input message="tns:getEstados" name="getEstados">
+    </wsdl:input>
+      <wsdl:output message="tns:getEstadosResponse" name="getEstadosResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFormasDePagamento">
+      <wsdl:input message="tns:getFormasDePagamento" name="getFormasDePagamento">
+    </wsdl:input>
+      <wsdl:output message="tns:getFormasDePagamentoResponse" name="getFormasDePagamentoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeEmail">
+      <wsdl:input message="tns:getTiposDeEmail" name="getTiposDeEmail">
+    </wsdl:input>
+      <wsdl:output message="tns:getTiposDeEmailResponse" name="getTiposDeEmailResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SeloServiceSoapBinding" type="tns:SeloService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getSituacoesDeTitulo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSituacoesDeTitulo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSituacoesDeTituloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeCobranca">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeCobranca">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeCobrancaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeCobranca20">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeCobranca20">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeCobranca20Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJuizesDePaz">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getJuizesDePaz">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getJuizesDePazResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSelosPedido">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSelosPedido">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSelosPedidoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeSubestabelecimento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeSubestabelecimento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeSubestabelecimentoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBancos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getBancos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getBancosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioLivros20">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCartorioLivros20">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCartorioLivros20Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEtnias">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEtnias">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEtniasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeRegistroDeAverbacao">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeRegistroDeAverbacao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeRegistroDeAverbacaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeTelefone">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeTelefone">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeTelefoneResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeTestamento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeTestamento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeTestamentoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComarcas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getComarcas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getComarcasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeDocumento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeDocumento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeDocumentoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeAto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeAto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeAtoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeSelo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeSelo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeSeloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMoedas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMoedas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMoedasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMotivosDeProtesto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMotivosDeProtesto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMotivosDeProtestoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEstadosCivis">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEstadosCivis">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEstadosCivisResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPaises">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPaises">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPaisesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEscolaridades">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEscolaridades">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEscolaridadesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificaTransmissao">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="verificaTransmissao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verificaTransmissaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEspeciesDeTitulo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEspeciesDeTitulo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEspeciesDeTituloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSelosPedidoCompactados">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSelosPedidoCompactados">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSelosPedidoCompactadosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioServentuarios20">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCartorioServentuarios20">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCartorioServentuarios20Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMotivosDeCancelamentoDoProtesto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMotivosDeCancelamentoDoProtesto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMotivosDeCancelamentoDoProtestoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="decodificaRecibo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="decodificaRecibo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="decodificaReciboResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getJuizesDePaz20">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getJuizesDePaz20">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getJuizesDePaz20Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeServentuario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeServentuario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeServentuarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComarcasMunicipios">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getComarcasMunicipios">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getComarcasMunicipiosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioServentuarios">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCartorioServentuarios">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCartorioServentuariosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorioLivros">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCartorioLivros">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCartorioLivrosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProfissoes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getProfissoes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getProfissoesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCartorios">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCartorios">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCartoriosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMunicipios">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMunicipios">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMunicipiosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="redisponibilizaUltimaTransmissaoSelos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="redisponibilizaUltimaTransmissaoSelos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="redisponibilizaUltimaTransmissaoSelosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getSelosCompactados">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSelosCompactados">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSelosCompactadosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeEndereco">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeEndereco">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeEnderecoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSelos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getSelos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSelosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeAto20">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeAto20">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeAto20Response">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeProcuracao">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeProcuracao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeProcuracaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeEndosso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeEndosso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeEndossoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEntesDeclaradosUtilidadePublicaEstadual">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEntesDeclaradosUtilidadePublicaEstadual">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEntesDeclaradosUtilidadePublicaEstadualResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="putAtos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="putAtos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="putAtosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEstados">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEstados">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEstadosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFormasDePagamento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getFormasDePagamento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getFormasDePagamentoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeEmail">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeEmail">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeEmailResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SeloService">
+    <wsdl:port binding="tns:SeloServiceSoapBinding" name="SeloServicePort">
+      <soap:address location="http://selo.tjsc.jus.br/selo_teste/SeloService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
