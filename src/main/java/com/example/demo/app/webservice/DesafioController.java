@@ -34,4 +34,11 @@ public class DesafioController {
 		String response = entesService.filterById(id);
 		return ResponseEntity.ok().body(response);
 	}
+
+	@GetMapping(value = "/getEntesDeclaradosUtilidadePublicaEstadualWithPagination")
+	public ResponseEntity<String> getEntesDeclaradosUtilidadePublicaEstadualWithPagination(
+			@RequestParam("offset") int offset, @RequestParam("limit") int limit) {
+		String response = entesService.getWithPagination(offset, limit);
+		return ResponseEntity.ok().body(response);
+	}
 }

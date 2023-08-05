@@ -49,7 +49,7 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 			List<EnteDeclaradoUtilidadePublicaEstadual> list) {
 		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = new ArrayList<>();
 		for (int i = 1; i < list.size(); i++) {
-			EnteDeclaradoUtilidadePublicaEstadual el = list.get(i-1);
+			EnteDeclaradoUtilidadePublicaEstadual el = list.get(i - 1);
 			listDTO.add(new EntesDeclaradosUtilidadePublicaEstadualDTO(el.getCdentepub(), el.getLei(),
 					el.getNomeEntidade(), (long) i));
 		}
@@ -108,5 +108,12 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 		List<EntesDeclaradosUtilidadePublicaEstadualDTO> filteredList = listDTO.stream()
 				.filter(el -> el.getId().equals(id)).collect(Collectors.toList());
 		return dtoToJson(filteredList);
+	}
+
+	public String getWithPagination(int offset, int limit) {
+		List<EnteDeclaradoUtilidadePublicaEstadual> originalList = getEntesDeclaradosUtilidadePublicaEstadual();
+		List<EnteDeclaradoUtilidadePublicaEstadual> filteredList = originalList.stream().skip(offset).limit(limit)
+				.collect(Collectors.toList());
+		return dtoToJson(entityToDto(filteredList));
 	}
 }
