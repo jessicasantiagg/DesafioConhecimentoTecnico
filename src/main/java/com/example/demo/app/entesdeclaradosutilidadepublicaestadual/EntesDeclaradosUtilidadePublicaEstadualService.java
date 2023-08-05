@@ -1,6 +1,7 @@
 package com.example.demo.app.entesdeclaradosutilidadepublicaestadual;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -44,11 +45,18 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 		soapBody.addChildElement("getEntesDeclaradosUtilidadePublicaEstadual", "selo");
 	}
 
-	public String entityToDtoJson(List<EnteDeclaradoUtilidadePublicaEstadual> list) {
-		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDto = list.stream()
-				.map(el -> new EntesDeclaradosUtilidadePublicaEstadualDTO(el.getCdentepub(), el.getLei(),
-						el.getNomeEntidade()))
-				.toList();
+	public List<EntesDeclaradosUtilidadePublicaEstadualDTO> entityToDto(
+			List<EnteDeclaradoUtilidadePublicaEstadual> list) {
+		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = new ArrayList<>();
+		for (int i = 1; i < list.size(); i++) {
+			EnteDeclaradoUtilidadePublicaEstadual el = list.get(i-1);
+			listDTO.add(new EntesDeclaradosUtilidadePublicaEstadualDTO(el.getCdentepub(), el.getLei(),
+					el.getNomeEntidade(), (long) i));
+		}
+		return listDTO;
+	}
+
+	public String dtoToJson(List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDto) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
 			return objectMapper.writeValueAsString(listDto);
@@ -60,7 +68,8 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 
 	public String getEntesDeclaradosUtilidadePublicaEstadualJSON() {
 		List<EnteDeclaradoUtilidadePublicaEstadual> list = getEntesDeclaradosUtilidadePublicaEstadual();
-		return entityToDtoJson(list);
+		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = entityToDto(list);
+		return dtoToJson(listDTO);
 	}
 
 	public List<EnteDeclaradoUtilidadePublicaEstadual> getEntesDeclaradosUtilidadePublicaEstadual() {
@@ -84,10 +93,20 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 		}
 	}
 
-	public String filter(String search) {
+	public String filterByNomeEntidade(String search) {
 		List<EnteDeclaradoUtilidadePublicaEstadual> originalList = getEntesDeclaradosUtilidadePublicaEstadual();
 		List<EnteDeclaradoUtilidadePublicaEstadual> filteredList = originalList.stream()
-				.filter(employee -> employee.getNomeEntidade().contains(search)).collect(Collectors.toList());
-		return entityToDtoJson(filteredList);
+				.filter(el -> el.getNomeEntidade().contains(search)).collect(Collectors.toList());
+		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = entityToDto(filteredList);
+		return dtoToJson(listDTO);
+	}
+
+	public String filterById(Long id) {
+		List<EnteDeclaradoUtilidadePublicaEstadual> originalList = getEntesDeclaradosUtilidadePublicaEstadual();
+		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = entityToDto(originalList);
+
+		List<EntesDeclaradosUtilidadePublicaEstadualDTO> filteredList = listDTO.stream()
+				.filter(el -> el.getId().equals(id)).collect(Collectors.toList());
+		return dtoToJson(filteredList);
 	}
 }

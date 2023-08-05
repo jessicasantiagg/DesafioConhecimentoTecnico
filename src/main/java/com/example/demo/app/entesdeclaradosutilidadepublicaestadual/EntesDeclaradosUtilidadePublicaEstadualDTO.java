@@ -1,6 +1,7 @@
 package com.example.demo.app.entesdeclaradosutilidadepublicaestadual;
 
 public class EntesDeclaradosUtilidadePublicaEstadualDTO {
+	public Long id;
 	public Long cdentepub;
 	public String lei;
 	public String nomeEntidade;
@@ -8,8 +9,9 @@ public class EntesDeclaradosUtilidadePublicaEstadualDTO {
 	public EntesDeclaradosUtilidadePublicaEstadualDTO() {
 	}
 
-	public EntesDeclaradosUtilidadePublicaEstadualDTO(Long cdentepub, String lei, String nomeEntidade) {
+	public EntesDeclaradosUtilidadePublicaEstadualDTO(Long cdentepub, String lei, String nomeEntidade, Long id) {
 		super();
+		this.id = id;
 		this.cdentepub = cdentepub;
 		this.lei = lei;
 		this.nomeEntidade = nomeEntidade;
@@ -37,6 +39,14 @@ public class EntesDeclaradosUtilidadePublicaEstadualDTO {
 
 	public void setNomeEntidade(String nomeEntidade) {
 		this.nomeEntidade = nomeEntidade;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

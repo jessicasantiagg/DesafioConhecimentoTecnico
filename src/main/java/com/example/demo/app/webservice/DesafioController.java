@@ -22,10 +22,16 @@ public class DesafioController {
 		return ResponseEntity.ok().body(list);
 	}
 
-	@GetMapping(value = "/getEntesDeclaradosUtilidadePublicaEstadual/filter")
-	public ResponseEntity<String> getEntesDeclaradosUtilidadePublicaEstadualSearch(
+	@GetMapping(value = "/getEntesDeclaradosUtilidadePublicaEstadual/filterByNomeEntidade")
+	public ResponseEntity<String> getEntesDeclaradosUtilidadePublicaEstadualByNomeEntidade(
 			@RequestParam("search") String search) {
-		String response = entesService.filter(search);
+		String response = entesService.filterByNomeEntidade(search);
+		return ResponseEntity.ok().body(response);
+	}
+
+	@GetMapping(value = "/getEntesDeclaradosUtilidadePublicaEstadual/filterById")
+	public ResponseEntity<String> getEntesDeclaradosUtilidadePublicaEstadualSearch(@RequestParam("id") Long id) {
+		String response = entesService.filterById(id);
 		return ResponseEntity.ok().body(response);
 	}
 }
