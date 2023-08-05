@@ -2,6 +2,7 @@ package com.example.demo.app.entesdeclaradosutilidadepublicaestadual;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.SOAPBody;
@@ -17,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.app.webservice.DesafioService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -42,13 +44,26 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 		soapBody.addChildElement("getEntesDeclaradosUtilidadePublicaEstadual", "selo");
 	}
 
-	public List<EntesDeclaradosUtilidadePublicaEstadualDTO> entityToDto(
-			List<EnteDeclaradoUtilidadePublicaEstadual> list) {
-		return list.stream().map(el -> new EntesDeclaradosUtilidadePublicaEstadualDTO(el.getCdentepub(), el.getLei(),
-				el.getNomeEntidade())).toList();
+	public String entityToDtoJson(List<EnteDeclaradoUtilidadePublicaEstadual> list) {
+		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDto = list.stream()
+				.map(el -> new EntesDeclaradosUtilidadePublicaEstadualDTO(el.getCdentepub(), el.getLei(),
+						el.getNomeEntidade()))
+				.toList();
+		ObjectMapper objectMapper = new ObjectMapper();
+		try {
+			return objectMapper.writeValueAsString(listDto);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+			throw new RuntimeException("Ocorreu um erro gerar JSON");
+		}
 	}
 
-	public String getEntesDeclaradosUtilidadePublicaEstadual() {
+	public String getEntesDeclaradosUtilidadePublicaEstadualJSON() {
+		List<EnteDeclaradoUtilidadePublicaEstadual> list = getEntesDeclaradosUtilidadePublicaEstadual();
+		return entityToDtoJson(list);
+	}
+
+	public List<EnteDeclaradoUtilidadePublicaEstadual> getEntesDeclaradosUtilidadePublicaEstadual() {
 		try {
 			String body = constructorSoapBodyRequest();
 			String response = desafioService.requestWebService(body);
@@ -59,19 +74,20 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 					.getJSONArray("entesDeclaradosUtilidadePublicaEstadual");
 
 			ObjectMapper objectMapper = new ObjectMapper();
-			List<EnteDeclaradoUtilidadePublicaEstadual> enteDeclaradoUtilidadePublicaEstadualList = objectMapper
-					.readValue(jsonArray.toString(), new TypeReference<List<EnteDeclaradoUtilidadePublicaEstadual>>() {
+			return objectMapper.readValue(jsonArray.toString(),
+					new TypeReference<List<EnteDeclaradoUtilidadePublicaEstadual>>() {
 					});
-			List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = entityToDto(
-					enteDeclaradoUtilidadePublicaEstadualList);
 
-			String entesJsonList = objectMapper.writeValueAsString(listDTO);
-			return entesJsonList;
-		} catch (SOAPException e) {
+		} catch (SOAPException | IOException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+			throw new RuntimeException("Ocorreu ao buscar dados");
 		}
-		return null;
+	}
+
+	public String filter(String search) {
+		List<EnteDeclaradoUtilidadePublicaEstadual> originalList = getEntesDeclaradosUtilidadePublicaEstadual();
+		List<EnteDeclaradoUtilidadePublicaEstadual> filteredList = originalList.stream()
+				.filter(employee -> employee.getNomeEntidade().contains(search)).collect(Collectors.toList());
+		return entityToDtoJson(filteredList);
 	}
 }
