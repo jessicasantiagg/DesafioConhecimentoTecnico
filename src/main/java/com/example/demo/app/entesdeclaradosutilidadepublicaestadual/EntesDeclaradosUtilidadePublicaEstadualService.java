@@ -48,7 +48,7 @@ public class EntesDeclaradosUtilidadePublicaEstadualService {
 	public List<EntesDeclaradosUtilidadePublicaEstadualDTO> entityToDto(
 			List<EnteDeclaradoUtilidadePublicaEstadual> list) {
 		List<EntesDeclaradosUtilidadePublicaEstadualDTO> listDTO = new ArrayList<>();
-		for (int i = 1; i < list.size(); i++) {
+		for (int i = 1; i <= list.size(); i++) {
 			EnteDeclaradoUtilidadePublicaEstadual el = list.get(i - 1);
 			listDTO.add(new EntesDeclaradosUtilidadePublicaEstadualDTO(el.getCdentepub(), el.getLei(),
 					el.getNomeEntidade(), (long) i));
