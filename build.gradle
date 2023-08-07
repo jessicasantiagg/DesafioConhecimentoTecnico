@@ -39,6 +39,8 @@ dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test')	
     implementation("com.sun.xml.messaging.saaj:saaj-impl:1.4.0")
     
+	testImplementation 'org.testcontainers:junit-jupiter:1.16.0'
+    
   	jaxb 'com.sun.xml.bind:jaxb-xjc:2.2.7-b41'
   	jaxb 'com.sun.xml.bind:jaxb-impl:2.2.7-b41'
   	jaxb 'javax.xml.bind:jaxb-api:2.2.7'
