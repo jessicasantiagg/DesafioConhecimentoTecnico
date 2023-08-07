@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.app.auth.AuthService;
 import com.example.demo.app.entesdeclaradosutilidadepublicaestadual.EntesDeclaradosUtilidadePublicaEstadualService;
 
 @RestController
@@ -15,6 +16,9 @@ public class DesafioController {
 
 	@Autowired
 	private EntesDeclaradosUtilidadePublicaEstadualService entesService;
+
+	@Autowired
+	private AuthService authService;
 
 	@GetMapping(value = "/getEntesDeclaradosUtilidadePublicaEstadual")
 	public ResponseEntity<String> getEntesDeclaradosUtilidadePublicaEstadual() {
@@ -41,4 +45,10 @@ public class DesafioController {
 		String response = entesService.getWithPagination(offset, limit);
 		return ResponseEntity.ok().body(response);
 	}
+
+	@GetMapping(value = "/auth")
+	public String auth(@RequestParam(value = "user") String user, @RequestParam(value = "pass") String pass) {
+		return authService.verificaTransmissao(user, pass);
+	}
+
 }
