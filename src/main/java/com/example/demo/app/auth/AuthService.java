@@ -48,7 +48,7 @@ public class AuthService {
 			return desafioService.requestWebService(body);
 		} catch (SOAPException | IOException e) {
 			e.printStackTrace();
-			throw new RuntimeException("Ocorreu ao buscar dados");
+			throw new RuntimeException("Ocorreu um erro ao buscar dados");
 		}
 	}
 }
